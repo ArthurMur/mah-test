@@ -1,0 +1,14 @@
+.dayDataField {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.dayDataField p {
+  margin: 5px 0;
+  cursor: pointer;
+}
+
+.dayDataField p:hover {
+  text-decoration: underline;
+}

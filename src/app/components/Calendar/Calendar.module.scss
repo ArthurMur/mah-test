@@ -1,0 +1,76 @@
+.calendarContainer {
+  font-family: Arial, sans-serif;
+}
+
+.calendarTable {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.calendarHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  line-height: 42px;
+}
+
+.calendarTable th,
+.calendarTable td {
+  padding: 12px 18px;
+  text-align: center;
+  height: 45px;
+}
+
+.calendarTable td {
+  cursor: pointer;
+}
+
+.calendarTable .weekday {
+  font-weight: bold;
+  color: gray;
+  user-select: none;
+  cursor: default;
+}
+
+.calendarTable .day {
+  background-color: #fff;
+  transition: all 0.2s ease-in-out;
+  border-radius: 10px;
+}
+
+.calendarTable .day:hover {
+  background-color: #8d898962;
+}
+
+.calendarTable .selected {
+  border: 2px solid rgb(28, 196, 28);
+  border-radius: 10px;
+  padding: 10px 16px; /* Компенсируем добавленную границу */
+}
+
+.calendarTable button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 0 5px;
+  padding: 5px 10px;
+}
+
+.calendarTable button:hover {
+  background-color: #f0f0f0;
+}
+
+.futureDay {
+  color: gray; /* Цвет текста будущих дней */
+  cursor: not-allowed; /* Запрет на выбор будущих дней */
+}
+
+.indicator {
+  width: 100%;
+  height: 3px;
+  background-color: gray;
+  text-align: center;
+  border-radius: 5px;
+}

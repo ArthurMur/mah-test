@@ -1,0 +1,16 @@
+.button {
+  border: none;
+  border-radius: 17px;
+  height: 42px;
+  user-select: none;
+  cursor: pointer;
+  font-size: 20px;
+  width: 42px;
+  background-color: var(--white);
+  font-weight: 700;
+  transition: all 0.3s ease-in-out;
+}
+
+.button:hover {
+  background-color: var(--btnHover);
+}

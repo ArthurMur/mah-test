@@ -1,0 +1,19 @@
+.buttonCLose {
+  border: none;
+  border-radius: 17px;
+  min-height: 35px;
+  width: 100%;
+  line-height: 35px;
+  user-select: none;
+  cursor: pointer;
+  background-color: var(--white);
+  font-weight: 600;
+  font-size: 15px;
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+  color: red;
+}
+
+.buttonCLose:hover {
+  background-color: var(--btnHover);
+}

@@ -1,0 +1,16 @@
+.dateDisplay {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: 17px;
+  background-color: #fff;
+  z-index: 20;
+  min-width: 200px;
+  cursor: pointer;
+}
+
+.date {
+  font-weight: 500;
+}
