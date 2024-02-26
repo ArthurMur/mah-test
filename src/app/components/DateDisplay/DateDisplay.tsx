@@ -12,17 +12,18 @@ interface DateDisplayProps {
 const DateDisplay: React.FC<DateDisplayProps> = ({ date, onSelectDate }) => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
-  const togglePopup = () => {
-    setIsPopupOpen(!isPopupOpen);
-  };
+  // Открытие/закрытие попапа
+  const togglePopup = () => setIsPopupOpen(!isPopupOpen);
 
+  // Форматирование даты
   const options: Intl.DateTimeFormatOptions = {
     day: 'numeric',
     month: 'long',
   };
 
+  // Обработчик выбора даты в попапе
   const handleSelectDate = (selectedDate: Date) => {
-    onSelectDate(selectedDate); // Вызов функции onSelectDate для обновления выбранной даты в родительском компоненте
+    onSelectDate(selectedDate); // Обновление выбранной даты в родительском компоненте
     togglePopup(); // Закрытие попапа после выбора даты
   };
 

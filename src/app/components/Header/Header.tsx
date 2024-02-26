@@ -1,10 +1,10 @@
 import React from 'react';
 import DateDisplay from '../DateDisplay/DateDisplay';
-import styles from './Buttons.module.scss';
+import styles from './Header.module.scss';
 import ButtonLeft from '@/app/ui/Buttons/ButtonLeft';
 import ButtonRight from '@/app/ui/Buttons/ButtonRight';
 
-interface ButtonsProps {
+interface HeaderProps {
   onPrevClick: () => void;
   onNextClick: () => void;
   disableNext: boolean;
@@ -12,7 +12,7 @@ interface ButtonsProps {
   onSelectDate: (date: Date) => void;
 }
 
-const Buttons: React.FC<ButtonsProps> = ({
+const Header: React.FC<HeaderProps> = ({
   onPrevClick,
   onNextClick,
   disableNext,
@@ -28,4 +28,4 @@ const Buttons: React.FC<ButtonsProps> = ({
   );
 };
 
-export default Buttons;
+export default Header;

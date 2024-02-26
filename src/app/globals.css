@@ -8,7 +8,13 @@
   --background: #eff3f6;
   --black: #000;
   --white: #fff;
+  --white2: #f0f0f0;
   --btnHover: #bcbcbc9b;
+  --gray: #808080;
+  --gray2: #8d898962;
+  --red: #d71818;
+  --green: #1cc41c;
+  --green2: rgb(25, 151, 25);
 }
 
 * {

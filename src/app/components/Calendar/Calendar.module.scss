@@ -28,23 +28,23 @@
 
 .calendarTable .weekday {
   font-weight: bold;
-  color: gray;
+  color: var(--gray);
   user-select: none;
   cursor: default;
 }
 
 .calendarTable .day {
-  background-color: #fff;
+  background-color: var(--white);
   transition: all 0.2s ease-in-out;
   border-radius: 10px;
 }
 
 .calendarTable .day:hover {
-  background-color: #8d898962;
+  background-color: var(--gray2);
 }
 
 .calendarTable .selected {
-  border: 2px solid rgb(28, 196, 28);
+  border: 2px solid var(--green);
   border-radius: 10px;
   padding: 10px 16px; /* Компенсируем добавленную границу */
 }
@@ -59,18 +59,49 @@
 }
 
 .calendarTable button:hover {
-  background-color: #f0f0f0;
+  background-color: var(--white2);
 }
 
 .futureDay {
-  color: gray; /* Цвет текста будущих дней */
-  cursor: not-allowed; /* Запрет на выбор будущих дней */
+  color: var(--gray);
+  cursor: not-allowed;
 }
 
 .indicator {
   width: 100%;
   height: 3px;
-  background-color: gray;
+  background-color: var(--gray);
   text-align: center;
   border-radius: 5px;
+}
+
+.weekendDay {
+  color: var(--red);
+}
+
+@media screen and (max-width: 440px) {
+  .calendarTable th,
+  .calendarTable td {
+    padding: 15px 15px;
+  }
+
+  .calendarTable .selected {
+    padding: 10px 1px; /* Компенсируем добавленную границу */
+  }
+
+  .indicator {
+    width: 17px;
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .calendarTable th,
+  .calendarTable td {
+    padding: 17px 12px;
+  }
+
+  .calendarTable .selected {
+    padding: 10px 1px; /* Компенсируем добавленную границу */
+  }
 }

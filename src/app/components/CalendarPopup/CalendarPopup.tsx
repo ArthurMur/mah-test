@@ -17,37 +17,41 @@ const CalendarPopup: React.FC<CalendarPopupProps> = ({
   date,
   onSelect,
 }) => {
+  const [selectedDate, setSelectedDate] = useState(date);
+
+  // Классы для стилизации попапа
+  const popupClass = isOpen ? `${styles.popup} ${styles.active}` : styles.popup;
+
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       const popupInner = document.getElementById('popup-inner');
+      // Закрываем попап, если клик был совершен вне области попапа
       if (popupInner && !popupInner.contains(event.target as Node)) {
         onClose();
       }
     };
 
+    // Прослушиватель событий для обнаружения кликов за пределами всплывающего окна.
     if (isOpen) {
       document.addEventListener('mousedown', handleClickOutside);
     }
 
+    // Удаление прослушивателя событий, когда всплывающее окно закрыто
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [isOpen, onClose]);
 
-  const [selectedDate, setSelectedDate] = useState(date);
-
+  // Эффект для обновления выбранной даты при изменении пропса date
   useEffect(() => {
-    setSelectedDate(date); // Обновляем selectedDate при изменении date
+    setSelectedDate(date);
   }, [date]);
 
+  // Обработчик выбора даты
   const handleSelectDate = (date: Date) => {
     setSelectedDate(date);
     onSelect(date); // Передаем выбранную дату в родительский компонент
   };
-
-  const popupClass = isOpen
-    ? `${styles.popup} ${styles.active}`
-    : `${styles.popup}`;
 
   return (
     <div className={popupClass}>
