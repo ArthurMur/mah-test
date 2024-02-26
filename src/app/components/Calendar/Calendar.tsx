@@ -154,7 +154,7 @@ const Calendar: React.FC<CalendarProps> = ({ selectedDate, onSelect }) => {
     );
     // Проверка, является ли выбранный день прошедшим или текущим
     if (newDate <= today) {
-      onSelect(newDate); // Вызываем onSelect с новой выбранной датой
+      onSelect(newDate); // Сохранение выбранного дня в состоянии
     }
   };
 

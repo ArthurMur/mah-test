@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import Calendar from '../Calendar/Calendar';
 import styles from './CalendarPopup.module.scss';
 import ButtonCLose from '@/app/ui/ButtonCLose/ButtonCLose';
+import ButtonSelect from '@/app/ui/ButtonSelect/ButtonSelect';
 
 interface CalendarPopupProps {
   onClose: () => void;
@@ -47,10 +48,9 @@ const CalendarPopup: React.FC<CalendarPopupProps> = ({
     setSelectedDate(date);
   }, [date]);
 
-  // Обработчик выбора даты
-  const handleSelectDate = (date: Date) => {
-    setSelectedDate(date);
-    onSelect(date); // Передаем выбранную дату в родительский компонент
+  const handleSelectButtonClick = () => {
+    onSelect(selectedDate); // Передача выбранной даты обратно в родительский компонент
+    onClose(); // Закрытие попапа после выбора даты
   };
 
   return (
@@ -62,7 +62,8 @@ const CalendarPopup: React.FC<CalendarPopupProps> = ({
       >
         <ButtonCLose onClick={onClose} />
         <p className={styles.title}>Календарь</p>
-        <Calendar selectedDate={selectedDate} onSelect={handleSelectDate} />
+        <Calendar selectedDate={selectedDate} onSelect={setSelectedDate} />
+        <ButtonSelect onClick={handleSelectButtonClick} />
       </div>
     </div>
   );
